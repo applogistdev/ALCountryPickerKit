@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ALCountryPickerKit_Example' do
+  pod 'ALCountryPickerKit', :path => '../'
+
+  target 'ALCountryPickerKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
