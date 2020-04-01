@@ -1,0 +1,16 @@
+PODS:
+  - ALCountryPickerKit (0.1.0)
+
+DEPENDENCIES:
+  - ALCountryPickerKit (from `../`)
+
+EXTERNAL SOURCES:
+  ALCountryPickerKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ALCountryPickerKit: 11542f1b34883551c1b00e2bcc272cc5caa92197
+
+PODFILE CHECKSUM: 1f222412ce3c68ff61f6808a4eed769ca317798e
+
+COCOAPODS: 1.9.0

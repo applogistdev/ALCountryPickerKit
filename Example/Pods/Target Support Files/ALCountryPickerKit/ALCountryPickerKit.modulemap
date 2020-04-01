@@ -1,0 +1,6 @@
+framework module ALCountryPickerKit {
+  umbrella header "ALCountryPickerKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
