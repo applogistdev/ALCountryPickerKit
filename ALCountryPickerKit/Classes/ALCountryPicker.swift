@@ -16,8 +16,24 @@ public protocol ALCountryPickerDelegate: class {
 final public class ALCountryPicker: UIViewController {
     
     lazy private var searchController: UISearchController = {
-        let sCont = UISearchController(searchResultsController: nil)
-        return sCont
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.isTranslucent = false
+        
+        if #available(iOS 13.0, *) {
+            searchController.searchBar.searchTextField.backgroundColor = UIColor.lightText
+            searchController.searchBar.isTranslucent = true
+            extendedLayoutIncludesOpaqueBars = true
+        } else {
+            searchController.searchBar.barStyle = .blackOpaque
+            searchController.searchBar.tintColor = .white
+        }
+        
+        return searchController
     }()
     
     lazy private var tableView: UITableView = {
@@ -28,6 +44,7 @@ final public class ALCountryPicker: UIViewController {
         return table
     }()
     
+    /// Raw country list
     lazy private var countries: [ALCountry] = {
         return NSLocale.isoCountryCodes.compactMap({
             
@@ -39,18 +56,11 @@ final public class ALCountryPicker: UIViewController {
         }).sorted(by: <)
     }()
     
-    lazy private var sectionedCountries: [ALSectionedCountries] = {
-        let countries = self.countries
-        let group = Dictionary(grouping: countries) { $0.name.first }
-        
-        let list = group.compactMap { (key, value) -> ALSectionedCountries? in
-            guard let key = key else {
-                return nil
-            }
-            return ALSectionedCountries(title: key.description, countries: value)
-        }
-        return list.sorted(by: <)
-    }()
+    /// Searched country list
+    private var filteredCountries: [ALCountry]?
+    
+    private var sectionedCountries: [ALSectionedCountries]?
+    
     
     private let cellID = "CountryCell"
     
@@ -81,6 +91,16 @@ final public class ALCountryPicker: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(tableView)
+        
+        if config.searchEnabled {
+            setupSearchController()
+        }
+        
+        if config.sectionEnabled {
+            sectionedCountries = getSectionedCountries()
+        }
+        
+        tableView.reloadData()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +116,13 @@ final public class ALCountryPicker: UIViewController {
     }
     
     
+    // MARK: - Setup
+    
+    private func setupSearchController() {
+        navigationItem.searchController = searchController
+    }
+    
+    
     // MARK: - Helpers
     
     private func dismissPicker() {
@@ -106,8 +133,46 @@ final public class ALCountryPicker: UIViewController {
         }
     }
     
-    private func getCountry(by indexPath: IndexPath) -> ALCountry {
-        return config.sectionEnabled ? sectionedCountries[indexPath.section].countries[indexPath.row] : countries[indexPath.row]
+    
+    private func getCountry(by indexPath: IndexPath) -> ALCountry? {
+        
+        if config.sectionEnabled {
+            return sectionedCountries?[indexPath.section].countries[indexPath.row]
+        } else {
+            return self.filteredCountries?[indexPath.row] ?? self.countries[indexPath.row]
+        }
+    }
+    
+    private func searchCountry(text: String) {
+        debugPrint("Searching: \(text)")
+        let text = text.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        filteredCountries = countries.filter({ (country) -> Bool in
+            let target = country.name.uppercased()
+            let val = target.range(of: text,
+                                   options: [.caseInsensitive, .diacriticInsensitive, .widthInsensitive]) != nil
+            return val
+        })
+        
+        if config.sectionEnabled {
+            sectionedCountries = getSectionedCountries()
+        }
+        
+        tableView.reloadData()
+    }
+    
+    /// Returns sectioned country list according o raw countries
+    private func getSectionedCountries() -> [ALSectionedCountries] {
+        let countries = self.filteredCountries ?? self.countries
+        let group = Dictionary(grouping: countries) { $0.name.first }
+        
+        let list = group.compactMap { (key, value) -> ALSectionedCountries? in
+            guard let key = key else {
+                return nil
+            }
+            return ALSectionedCountries(title: key.description, countries: value)
+        }
+        return list.sorted(by: <)
     }
 }
 
@@ -116,14 +181,14 @@ extension ALCountryPicker: UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         if config.sectionEnabled {
-            return sectionedCountries.count
+            return sectionedCountries?.count ?? 0
         }
         return 1
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if config.sectionEnabled {
-            return sectionedCountries[section].countries.count
+            return sectionedCountries?[section].countries.count ?? 0
         }
         return countries.count
     }
@@ -140,8 +205,8 @@ extension ALCountryPicker: UITableViewDataSource {
         
         let country = getCountry(by: indexPath)
         
-        cell?.textLabel?.text = country.name
-        cell?.detailTextLabel?.text = country.isoCode
+        cell?.textLabel?.text = country?.name
+        cell?.detailTextLabel?.text = country?.isoCode
         return cell!
     }
 }
@@ -150,19 +215,40 @@ extension ALCountryPicker: UITableViewDataSource {
 extension ALCountryPicker: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let country = getCountry(by: indexPath)
-        delegate?.countryPicker(picker: self, didSelect: country)
+        if let country = getCountry(by: indexPath) {
+            delegate?.countryPicker(picker: self, didSelect: country)
+        }
         dismissPicker()
     }
     
     public func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if config.sectionEnabled {
-            return sectionedCountries.map { $0.title }
+            return sectionedCountries?.map { $0.title }
         }
         return nil
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionedCountries[section].title
+        return sectionedCountries?[section].title
+    }
+}
+
+extension ALCountryPicker: UISearchBarDelegate {
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchCountry(text: searchText)
+    }
+    
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredCountries = nil
+        if config.sectionEnabled {
+            sectionedCountries = getSectionedCountries()
+        }
+        tableView.reloadData()
+    }
+}
+
+extension ALCountryPicker: UISearchResultsUpdating {
+    public func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }

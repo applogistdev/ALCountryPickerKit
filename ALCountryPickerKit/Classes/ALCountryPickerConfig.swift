@@ -13,6 +13,7 @@ public class ALCountryPickerConfig {
     public var cellDetailFont: UIFont = .systemFont(ofSize: 12)
     public var cellRowHeight: CGFloat = 45
     public var sectionEnabled: Bool = true
+    public var searchEnabled: Bool = true
     
     public init() { }
 }
