@@ -23,11 +23,11 @@ final public class ALCountryPicker: UIViewController {
         searchController.searchBar.tintColor = config.searchBarTintColor
         searchController.searchBar.barTintColor = .white
         searchController.searchBar.isTranslucent = false
+        extendedLayoutIncludesOpaqueBars = true
         
         if #available(iOS 13.0, *) {
             searchController.searchBar.searchTextField.backgroundColor = UIColor.lightText
             searchController.searchBar.isTranslucent = true
-            extendedLayoutIncludesOpaqueBars = true
         } else {
             searchController.searchBar.barStyle = .blackOpaque
         }
@@ -40,6 +40,7 @@ final public class ALCountryPicker: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.rowHeight = self.config.cellRowHeight
+        table.keyboardDismissMode = .onDrag
         return table
     }()
     
