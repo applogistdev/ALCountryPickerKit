@@ -20,7 +20,7 @@ final public class ALCountryPicker: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.tintColor = .white
+        searchController.searchBar.tintColor = config.searchBarTintColor
         searchController.searchBar.barTintColor = .white
         searchController.searchBar.isTranslucent = false
         
@@ -30,7 +30,6 @@ final public class ALCountryPicker: UIViewController {
             extendedLayoutIncludesOpaqueBars = true
         } else {
             searchController.searchBar.barStyle = .blackOpaque
-            searchController.searchBar.tintColor = .white
         }
         
         return searchController
@@ -119,6 +118,10 @@ final public class ALCountryPicker: UIViewController {
     // MARK: - Setup
     
     private func setupSearchController() {
+        if let customColor = config.searchBarTextColor {
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+                .defaultTextAttributes = [NSAttributedString.Key.foregroundColor: customColor]
+        }
         searchController.hidesNavigationBarDuringPresentation = false
         navigationItem.searchController = searchController
     }

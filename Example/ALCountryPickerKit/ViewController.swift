@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     func config() -> ALCountryPickerConfig {
         let conf = ALCountryPickerConfig()
         conf.sectionEnabled = sectionTypeSegmented.selectedSegmentIndex == 0
+        // conf.searchBarTintColor = .brown
+        // conf.searchBarTextColor = .orange // Can be set if wanted
         return conf
     }
     
