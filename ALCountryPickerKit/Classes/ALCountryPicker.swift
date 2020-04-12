@@ -145,6 +145,13 @@ final public class ALCountryPicker: UIViewController {
     
     private func searchCountry(text: String) {
         debugPrint("Searching: \(text)")
+        
+        if text.isEmpty {
+            filteredCountries = nil
+            tableView.reloadData()
+            return
+        }
+        
         let text = text.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         filteredCountries = countries.filter({ (country) -> Bool in
@@ -190,7 +197,7 @@ extension ALCountryPicker: UITableViewDataSource {
         if config.sectionEnabled {
             return sectionedCountries?[section].countries.count ?? 0
         }
-        return countries.count
+        return filteredCountries?.count ?? countries.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
