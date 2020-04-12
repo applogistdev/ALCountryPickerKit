@@ -119,6 +119,7 @@ final public class ALCountryPicker: UIViewController {
     // MARK: - Setup
     
     private func setupSearchController() {
+        searchController.hidesNavigationBarDuringPresentation = false
         navigationItem.searchController = searchController
     }
     
