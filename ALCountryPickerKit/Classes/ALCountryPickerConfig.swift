@@ -15,5 +15,8 @@ public class ALCountryPickerConfig {
     public var sectionEnabled: Bool = true
     public var searchEnabled: Bool = true
     
+    public var searchBarTintColor: UIColor = .white
+    public var searchBarTextColor: UIColor?
+    
     public init() { }
 }
