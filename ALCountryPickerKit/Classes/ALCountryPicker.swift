@@ -64,8 +64,6 @@ final public class ALCountryPicker: UIViewController {
     
     private let cellID = "CountryCell"
     
-    private var isModal: Bool = false
-    
     
     // MARK: - Public
     
@@ -103,12 +101,6 @@ final public class ALCountryPicker: UIViewController {
         tableView.reloadData()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        isModal = isBeingPresented
-    }
-    
     public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -132,7 +124,11 @@ final public class ALCountryPicker: UIViewController {
     
     private func dismissPicker() {
         if isModal {
-            dismiss(animated: true, completion: nil)
+            if let nav = navigationController {
+                nav.dismiss(animated: true, completion: nil)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
         } else {
             navigationController?.popViewController(animated: true)
         }
@@ -262,5 +258,17 @@ extension ALCountryPicker: UISearchBarDelegate {
 extension ALCountryPicker: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
         
+    }
+}
+
+extension UIViewController {
+    
+    var isModal: Bool {
+        
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+        
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
 }
