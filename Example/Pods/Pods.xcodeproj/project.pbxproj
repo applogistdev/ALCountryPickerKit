@@ -11,6 +11,10 @@
 		2C60C7849913E81D98DCB21E0B23DD72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3F61FDD5878F898504877C35C9073B0D /* Pods-ALCountryPickerKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 910F70FE4CE4C2114C95F3E477D74C0A /* Pods-ALCountryPickerKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FABB1DF6460E0CE3A6EEBE8B2D9872A /* ALCountryPickerKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B47A8ED8CA388421F736CC082BAB7A8D /* ALCountryPickerKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		909E478E244856DA000CA8D7 /* ALCityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E478D244856DA000CA8D7 /* ALCityPicker.swift */; };
+		909E4790244857D6000CA8D7 /* ALCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E478F244857D6000CA8D7 /* ALCity.swift */; };
+		909E479224485875000CA8D7 /* ALCityPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E479124485875000CA8D7 /* ALCityPickerConfig.swift */; };
+		909E479924486CF5000CA8D7 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 909E479824486CF5000CA8D7 /* Resources.bundle */; };
 		984AB6C33046C0D1F94729690E956FC8 /* Pods-ALCountryPickerKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AD911C0C106ECD7735C591E167430F /* Pods-ALCountryPickerKit_Example-dummy.m */; };
 		BBD6357B5DE175AD21238BAD2E61D940 /* ALCountryPickerKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD70B0C1FF13CA5AF059D6F9479C85DD /* ALCountryPickerKit-dummy.m */; };
 		D621EF1D0698A04472EDC2142C0AB871 /* ALCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09790605B1855E492BF0DF47E29E7DAB /* ALCountry.swift */; };
@@ -45,6 +49,10 @@
 		7473555AD127E539317705C0D403062B /* Pods-ALCountryPickerKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALCountryPickerKit_Example-Info.plist"; sourceTree = "<group>"; };
 		78F084E396E12E0AF6A3087BAC34518A /* ALSectionedCountries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ALSectionedCountries.swift; path = ALCountryPickerKit/Classes/ALSectionedCountries.swift; sourceTree = "<group>"; };
 		89DF4AAD52978610B7F7897A34404A07 /* ALCountryPickerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALCountryPickerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		909E478D244856DA000CA8D7 /* ALCityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALCityPicker.swift; sourceTree = "<group>"; };
+		909E478F244857D6000CA8D7 /* ALCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALCity.swift; sourceTree = "<group>"; };
+		909E479124485875000CA8D7 /* ALCityPickerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALCityPickerConfig.swift; sourceTree = "<group>"; };
+		909E479824486CF5000CA8D7 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 		910F70FE4CE4C2114C95F3E477D74C0A /* Pods-ALCountryPickerKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALCountryPickerKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		9211A2DBBBFDE17E14C668B81AC80BD3 /* Pods-ALCountryPickerKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALCountryPickerKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C7600CD2FA68B7CCB59AB7430F65DB54 /* ALCountryPickerKit */,
+				909E479824486CF5000CA8D7 /* Resources.bundle */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -148,8 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				09790605B1855E492BF0DF47E29E7DAB /* ALCountry.swift */,
+				909E478F244857D6000CA8D7 /* ALCity.swift */,
+				909E478D244856DA000CA8D7 /* ALCityPicker.swift */,
 				007897F29C0360C2AD8358095CA08E97 /* ALCountryPicker.swift */,
 				3513257E5845A8321B67E48A8739B1F4 /* ALCountryPickerConfig.swift */,
+				909E479124485875000CA8D7 /* ALCityPickerConfig.swift */,
 				78F084E396E12E0AF6A3087BAC34518A /* ALSectionedCountries.swift */,
 				F7BA8BA6684AE3D4FEEC295155FA99E2 /* Pod */,
 				792106174437123A873D527238EBBEDA /* Support Files */,
@@ -291,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909E479924486CF5000CA8D7 /* Resources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +324,10 @@
 			files = (
 				D621EF1D0698A04472EDC2142C0AB871 /* ALCountry.swift in Sources */,
 				FE966AC345BF1D030B309BB048CEC6B8 /* ALCountryPicker.swift in Sources */,
+				909E4790244857D6000CA8D7 /* ALCity.swift in Sources */,
 				F38CB46B2846529354A38B1C250BCFB2 /* ALCountryPickerConfig.swift in Sources */,
+				909E478E244856DA000CA8D7 /* ALCityPicker.swift in Sources */,
+				909E479224485875000CA8D7 /* ALCityPickerConfig.swift in Sources */,
 				BBD6357B5DE175AD21238BAD2E61D940 /* ALCountryPickerKit-dummy.m in Sources */,
 				06BBA7F1D180ADD493F7B1333F60BCF2 /* ALSectionedCountries.swift in Sources */,
 			);

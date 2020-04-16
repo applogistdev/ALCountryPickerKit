@@ -9,7 +9,7 @@
 import UIKit
 import ALCountryPickerKit
 
-class ViewController: UIViewController {
+class CountryPickerSetupViewController: UIViewController {
     
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var languageSegmented: UISegmentedControl!
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ALCountryPickerDelegate {
+extension CountryPickerSetupViewController: ALCountryPickerDelegate {
     func countryPicker(picker: ALCountryPicker, didSelect country: ALCountry) {
         countryLabel.text = country.name
     }

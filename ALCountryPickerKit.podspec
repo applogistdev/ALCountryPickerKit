@@ -32,9 +32,10 @@ Pod::Spec.new do |s|
     s.swift_version = "5.0"
     s.source_files = 'ALCountryPickerKit/Classes/**/*'
     
-    # s.resource_bundles = {
-    #   'ALCountryPicker' => ['ALCountryPicker/Assets/*.png']
-    # }
+     s.resource_bundles = {
+       'ALCountryPicker' => ['ALCountryPickerKit/**/*']
+     }
+     
     
     # s.public_header_files = 'Pod/Classes/**/*.h'
     # s.frameworks = 'UIKit', 'MapKit'
