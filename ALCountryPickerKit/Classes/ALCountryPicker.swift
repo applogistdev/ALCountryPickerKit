@@ -20,17 +20,16 @@ final public class ALCountryPicker: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.tintColor = .white
+        searchController.searchBar.tintColor = config.searchBarTintColor
         searchController.searchBar.barTintColor = .white
         searchController.searchBar.isTranslucent = false
+        extendedLayoutIncludesOpaqueBars = true
         
         if #available(iOS 13.0, *) {
             searchController.searchBar.searchTextField.backgroundColor = UIColor.lightText
             searchController.searchBar.isTranslucent = true
-            extendedLayoutIncludesOpaqueBars = true
         } else {
             searchController.searchBar.barStyle = .blackOpaque
-            searchController.searchBar.tintColor = .white
         }
         
         return searchController
@@ -41,6 +40,7 @@ final public class ALCountryPicker: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.rowHeight = self.config.cellRowHeight
+        table.keyboardDismissMode = .onDrag
         return table
     }()
     
@@ -63,8 +63,6 @@ final public class ALCountryPicker: UIViewController {
     
     
     private let cellID = "CountryCell"
-    
-    private var isModal: Bool = false
     
     
     // MARK: - Public
@@ -103,12 +101,6 @@ final public class ALCountryPicker: UIViewController {
         tableView.reloadData()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        isModal = isBeingPresented
-    }
-    
     public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -119,6 +111,11 @@ final public class ALCountryPicker: UIViewController {
     // MARK: - Setup
     
     private func setupSearchController() {
+        if let customColor = config.searchBarTextColor {
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+                .defaultTextAttributes = [NSAttributedString.Key.foregroundColor: customColor]
+        }
+        searchController.hidesNavigationBarDuringPresentation = false
         navigationItem.searchController = searchController
     }
     
@@ -127,7 +124,11 @@ final public class ALCountryPicker: UIViewController {
     
     private func dismissPicker() {
         if isModal {
-            dismiss(animated: true, completion: nil)
+            if let nav = navigationController {
+                nav.dismiss(animated: true, completion: nil)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
         } else {
             navigationController?.popViewController(animated: true)
         }
@@ -145,6 +146,13 @@ final public class ALCountryPicker: UIViewController {
     
     private func searchCountry(text: String) {
         debugPrint("Searching: \(text)")
+        
+        if text.isEmpty {
+            filteredCountries = nil
+            tableView.reloadData()
+            return
+        }
+        
         let text = text.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         filteredCountries = countries.filter({ (country) -> Bool in
@@ -190,7 +198,7 @@ extension ALCountryPicker: UITableViewDataSource {
         if config.sectionEnabled {
             return sectionedCountries?[section].countries.count ?? 0
         }
-        return countries.count
+        return filteredCountries?.count ?? countries.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -250,5 +258,17 @@ extension ALCountryPicker: UISearchBarDelegate {
 extension ALCountryPicker: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
         
+    }
+}
+
+extension UIViewController {
+    
+    var isModal: Bool {
+        
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+        
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
 }

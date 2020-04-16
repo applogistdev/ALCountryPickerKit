@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     func config() -> ALCountryPickerConfig {
         let conf = ALCountryPickerConfig()
         conf.sectionEnabled = sectionTypeSegmented.selectedSegmentIndex == 0
+        // conf.searchBarTintColor = .brown
+        // conf.searchBarTextColor = .orange // Can be set if wanted
         return conf
     }
     
@@ -57,7 +59,9 @@ class ViewController: UIViewController {
         picker.delegate = self
         
         if presentationTypeSegmented.selectedSegmentIndex == 0 {
-            present(picker, animated: true, completion: nil)
+            let navVC = UINavigationController(rootViewController: picker)
+            navVC.modalPresentationStyle = .fullScreen
+            present(navVC, animated: true, completion: nil)
         } else {
             self.navigationController?.pushViewController(picker,
                                                           animated: true)

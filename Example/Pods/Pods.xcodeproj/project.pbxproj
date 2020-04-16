@@ -38,24 +38,24 @@
 		3513257E5845A8321B67E48A8739B1F4 /* ALCountryPickerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ALCountryPickerConfig.swift; path = ALCountryPickerKit/Classes/ALCountryPickerConfig.swift; sourceTree = "<group>"; };
 		4C1B6E6B1A8A74A4FE69CC31DE88C696 /* Pods-ALCountryPickerKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALCountryPickerKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		550A3BB00AB367770F0D3C4480C1AED1 /* Pods-ALCountryPickerKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALCountryPickerKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		556AEE09D5864375C7EF20047919029C /* ALCountryPickerKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ALCountryPickerKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		556AEE09D5864375C7EF20047919029C /* ALCountryPickerKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ALCountryPickerKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5BEA395D42B75A02539B48E24E628B05 /* ALCountryPickerKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ALCountryPickerKit.modulemap; sourceTree = "<group>"; };
 		5C9D7ECFC83E368E58AD36E425F70B49 /* Pods-ALCountryPickerKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALCountryPickerKit_Example.modulemap"; sourceTree = "<group>"; };
 		673E1CDE40040AD4B58150D85641DC93 /* Pods-ALCountryPickerKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALCountryPickerKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7473555AD127E539317705C0D403062B /* Pods-ALCountryPickerKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALCountryPickerKit_Example-Info.plist"; sourceTree = "<group>"; };
 		78F084E396E12E0AF6A3087BAC34518A /* ALSectionedCountries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ALSectionedCountries.swift; path = ALCountryPickerKit/Classes/ALSectionedCountries.swift; sourceTree = "<group>"; };
-		89DF4AAD52978610B7F7897A34404A07 /* ALCountryPickerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ALCountryPickerKit.framework; path = ALCountryPickerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89DF4AAD52978610B7F7897A34404A07 /* ALCountryPickerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALCountryPickerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910F70FE4CE4C2114C95F3E477D74C0A /* Pods-ALCountryPickerKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALCountryPickerKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		9211A2DBBBFDE17E14C668B81AC80BD3 /* Pods-ALCountryPickerKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALCountryPickerKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F58EC95F605E84BAC633BDF7A634792 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F58EC95F605E84BAC633BDF7A634792 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A1AD911C0C106ECD7735C591E167430F /* Pods-ALCountryPickerKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALCountryPickerKit_Example-dummy.m"; sourceTree = "<group>"; };
 		B47A8ED8CA388421F736CC082BAB7A8D /* ALCountryPickerKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALCountryPickerKit-umbrella.h"; sourceTree = "<group>"; };
 		BD70B0C1FF13CA5AF059D6F9479C85DD /* ALCountryPickerKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ALCountryPickerKit-dummy.m"; sourceTree = "<group>"; };
 		C999E4E2441E5D74ED44ACEF5BA5BF8A /* ALCountryPickerKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ALCountryPickerKit.debug.xcconfig; sourceTree = "<group>"; };
 		CE0FCF4E4AADA088FDDE50A1F5DD8E87 /* ALCountryPickerKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ALCountryPickerKit.release.xcconfig; sourceTree = "<group>"; };
-		D7AD37EEE197AF35AB31ABF5D5EA3751 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		EBC8058550F6C5FDCCFF4E3F974DE1D5 /* Pods_ALCountryPickerKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALCountryPickerKit_Example.framework; path = "Pods-ALCountryPickerKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7AD37EEE197AF35AB31ABF5D5EA3751 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EBC8058550F6C5FDCCFF4E3F974DE1D5 /* Pods_ALCountryPickerKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALCountryPickerKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB088EBE49FEB339F9899C6E0373F917 /* Pods-ALCountryPickerKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALCountryPickerKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +254,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					1812FAFD78204CFEFD91349DA0A1F092 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -412,8 +417,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -425,12 +429,15 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -442,6 +449,8 @@
 				MODULEMAP_FILE = "Target Support Files/ALCountryPickerKit/ALCountryPickerKit.modulemap";
 				PRODUCT_MODULE_NAME = ALCountryPickerKit;
 				PRODUCT_NAME = ALCountryPickerKit;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -558,12 +567,15 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -575,6 +587,8 @@
 				MODULEMAP_FILE = "Target Support Files/ALCountryPickerKit/ALCountryPickerKit.modulemap";
 				PRODUCT_MODULE_NAME = ALCountryPickerKit;
 				PRODUCT_NAME = ALCountryPickerKit;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
