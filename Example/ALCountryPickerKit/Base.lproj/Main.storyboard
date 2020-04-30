@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hl6-Gr-TE0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hl6-Gr-TE0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Select Picker-->
+        <scene sceneID="S9p-4A-hij">
+            <objects>
+                <viewController id="0Ry-C0-SvG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hMf-e2-d9s"/>
+                        <viewControllerLayoutGuide type="bottom" id="jAA-Dk-lEZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IcZ-Tz-e3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="plv-Xe-dwL">
+                                <rect key="frame" x="135" y="378" width="144" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzp-hl-G1g">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="HIq-dN-BFa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="Country Picker">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Qx5-ay-1uS"/>
+                                            <segue destination="5oO-5b-LAu" kind="push" id="dca-hz-Enc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVn-JS-t6c">
+                                        <rect key="frame" x="0.0" y="90" width="144" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8Fo-zb-5SB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="City Picker">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sPg-gp-AwF"/>
+                                            <segue destination="vXZ-lx-hvc" kind="push" id="pmm-0E-c0t"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your Picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiT-uh-WCd">
+                                <rect key="frame" x="139" y="168" width="136" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nkb-6L-rHy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WiT-uh-WCd" firstAttribute="centerX" secondItem="IcZ-Tz-e3Q" secondAttribute="centerX" id="5kX-fR-yuz"/>
+                            <constraint firstItem="plv-Xe-dwL" firstAttribute="centerX" secondItem="IcZ-Tz-e3Q" secondAttribute="centerX" id="NGg-ad-GFB"/>
+                            <constraint firstItem="WiT-uh-WCd" firstAttribute="top" secondItem="hMf-e2-d9s" secondAttribute="bottom" constant="80" id="byS-Nn-XGp"/>
+                            <constraint firstItem="plv-Xe-dwL" firstAttribute="centerY" secondItem="IcZ-Tz-e3Q" secondAttribute="centerY" id="zGw-tB-47q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Picker" id="T91-lP-Omv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Osn-Sz-SKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="108"/>
+        </scene>
         <!--ALCountryPickerKit-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="ALCountryPickerKit" id="vXZ-lx-hvc" customClass="ViewController" customModule="ALCountryPicker_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ALCountryPickerKit" id="vXZ-lx-hvc" customClass="CityPickerSetupViewController" customModule="ALCountryPickerKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXA-Ht-peF">
-                                <rect key="frame" x="40" y="30" width="520" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXA-Ht-peF">
+                                <rect key="frame" x="40" y="118" width="334" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mH9-KX-srg"/>
                                 </constraints>
@@ -26,52 +111,15 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Iez-zC-pc1">
-                                <rect key="frame" x="40" y="110" width="520" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="zC7-eB-tYw"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="English"/>
-                                    <segment title="Turkish"/>
-                                    <segment title="German"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMa-mV-uPV">
-                                <rect key="frame" x="40" y="86" width="520" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="nuL-fO-3C3">
-                                <rect key="frame" x="40" y="194" width="520" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="TY9-Ih-pkm"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="On"/>
-                                    <segment title="Off"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sectionable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibT-aX-djT">
-                                <rect key="frame" x="40" y="170" width="520" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN4-4I-A6b">
-                                <rect key="frame" x="223" y="354" width="154" height="50"/>
+                                <rect key="frame" x="144" y="308" width="126" height="50"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m0e-YD-Cqd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
-                                <state key="normal" title="Choose Country">
+                                <state key="normal" title="Choose City">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -84,7 +132,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-FC-f7e">
-                                <rect key="frame" x="40" y="278" width="520" height="40"/>
+                                <rect key="frame" x="40" y="232" width="334" height="41"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xHm-2g-bOq"/>
@@ -96,7 +144,7 @@
                                 <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presentation " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-vE-WqO">
-                                <rect key="frame" x="40" y="254" width="520" height="16"/>
+                                <rect key="frame" x="40" y="208" width="334" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -105,41 +153,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="f5e-FC-f7e" firstAttribute="top" secondItem="f3N-vE-WqO" secondAttribute="bottom" constant="8" id="5t1-ay-kEd"/>
+                            <constraint firstItem="f3N-vE-WqO" firstAttribute="top" secondItem="yXA-Ht-peF" secondAttribute="bottom" constant="60" id="6I7-ip-NYf"/>
                             <constraint firstItem="yXA-Ht-peF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="AF0-fr-oFj"/>
-                            <constraint firstItem="eMa-mV-uPV" firstAttribute="leading" secondItem="Iez-zC-pc1" secondAttribute="leading" id="AHH-w7-bZt"/>
-                            <constraint firstItem="ibT-aX-djT" firstAttribute="leading" secondItem="Iez-zC-pc1" secondAttribute="leading" id="AHx-Kk-rqh"/>
                             <constraint firstItem="nN4-4I-A6b" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Ax8-bJ-n4q"/>
                             <constraint firstItem="yXA-Ht-peF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="D5H-gW-KpA"/>
-                            <constraint firstItem="Iez-zC-pc1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="Dou-Zy-gzL"/>
-                            <constraint firstItem="f3N-vE-WqO" firstAttribute="top" secondItem="nuL-fO-3C3" secondAttribute="bottom" constant="20" id="FnU-Mx-jKS"/>
-                            <constraint firstItem="f5e-FC-f7e" firstAttribute="trailing" secondItem="nuL-fO-3C3" secondAttribute="trailing" id="JIZ-bY-f4f"/>
-                            <constraint firstItem="Iez-zC-pc1" firstAttribute="top" secondItem="yXA-Ht-peF" secondAttribute="bottom" constant="50" id="LvR-fR-5HS"/>
-                            <constraint firstItem="Iez-zC-pc1" firstAttribute="top" secondItem="eMa-mV-uPV" secondAttribute="bottom" constant="8" id="Pwv-Ij-t2X"/>
                             <constraint firstItem="f3N-vE-WqO" firstAttribute="leading" secondItem="f5e-FC-f7e" secondAttribute="leading" id="R7V-Hx-zZ9"/>
-                            <constraint firstItem="f3N-vE-WqO" firstAttribute="leading" secondItem="nuL-fO-3C3" secondAttribute="leading" id="Sl0-4Y-Br4"/>
-                            <constraint firstItem="eMa-mV-uPV" firstAttribute="trailing" secondItem="Iez-zC-pc1" secondAttribute="trailing" id="V7i-od-ThR"/>
-                            <constraint firstItem="ibT-aX-djT" firstAttribute="top" secondItem="Iez-zC-pc1" secondAttribute="bottom" constant="20" id="VRS-W0-cub"/>
-                            <constraint firstItem="ibT-aX-djT" firstAttribute="trailing" secondItem="nuL-fO-3C3" secondAttribute="trailing" id="Ye9-4y-rcA"/>
                             <constraint firstItem="nN4-4I-A6b" firstAttribute="top" secondItem="f5e-FC-f7e" secondAttribute="bottom" constant="36" id="dFI-1P-o10"/>
-                            <constraint firstItem="nuL-fO-3C3" firstAttribute="top" secondItem="ibT-aX-djT" secondAttribute="bottom" constant="8" id="kLJ-rB-o8C"/>
-                            <constraint firstItem="nuL-fO-3C3" firstAttribute="trailing" secondItem="Iez-zC-pc1" secondAttribute="trailing" id="mU7-65-CZh"/>
-                            <constraint firstItem="ibT-aX-djT" firstAttribute="leading" secondItem="nuL-fO-3C3" secondAttribute="leading" id="q9L-5U-GtD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Iez-zC-pc1" secondAttribute="trailing" constant="20" id="rHs-Kj-SnF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f5e-FC-f7e" secondAttribute="trailing" constant="20" id="fIA-y9-zsy"/>
                             <constraint firstItem="f3N-vE-WqO" firstAttribute="trailing" secondItem="f5e-FC-f7e" secondAttribute="trailing" id="rfg-ag-Dn3"/>
+                            <constraint firstItem="f5e-FC-f7e" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="uAz-a7-AaZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yXA-Ht-peF" secondAttribute="trailing" constant="20" id="vxV-JY-8oa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ALCountryPickerKit" id="Gdw-Eb-WO5"/>
+                    <navigationItem key="navigationItem" title="ALCityPicker" id="Gdw-Eb-WO5"/>
                     <connections>
-                        <outlet property="countryLabel" destination="yXA-Ht-peF" id="SYa-tE-DS4"/>
-                        <outlet property="languageSegmented" destination="Iez-zC-pc1" id="EY7-qm-xKf"/>
+                        <outlet property="cityLabel" destination="yXA-Ht-peF" id="S31-l5-pwJ"/>
                         <outlet property="presentationTypeSegmented" destination="f5e-FC-f7e" id="DKQ-5h-yi3"/>
-                        <outlet property="sectionTypeSegmented" destination="nuL-fO-3C3" id="eUD-gJ-0lQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="108"/>
+            <point key="canvasLocation" x="971" y="543"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LIC-D8-zYd">
@@ -147,17 +181,153 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hl6-Gr-TE0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wBf-gD-kSU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="lmz-XM-PAp"/>
+                        <segue destination="0Ry-C0-SvG" kind="relationship" relationship="rootViewController" id="KAj-ic-NM7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT4-dn-a45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-545" y="108"/>
+        </scene>
+        <!--ALCountryPickerKit-->
+        <scene sceneID="C9V-HS-qGG">
+            <objects>
+                <viewController title="ALCountryPickerKit" id="5oO-5b-LAu" customClass="CountryPickerSetupViewController" customModule="ALCountryPickerKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0dA-94-Yjb"/>
+                        <viewControllerLayoutGuide type="bottom" id="EAI-5h-df2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5gw-QE-IXA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y9-ao-sfw">
+                                <rect key="frame" x="40" y="118" width="334" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qvu-l6-haX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="mN4-vJ-INA">
+                                <rect key="frame" x="40" y="228" width="334" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="rqh-vE-18S"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="English"/>
+                                    <segment title="Turkish"/>
+                                    <segment title="German"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8E-Mr-QtW">
+                                <rect key="frame" x="40" y="204" width="334" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="ATV-24-yru">
+                                <rect key="frame" x="40" y="312" width="334" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9fW-8W-H9p"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="On"/>
+                                    <segment title="Off"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sectionable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqH-Om-y0l">
+                                <rect key="frame" x="40" y="288" width="334" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZS-zh-DbO">
+                                <rect key="frame" x="130" y="472" width="154" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YhR-Jh-ZZb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Choose Country">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="5oO-5b-LAu" eventType="touchUpInside" id="lF7-gx-ubr"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="FX3-rN-cOz">
+                                <rect key="frame" x="40" y="396" width="334" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Nyu-Yg-AWm"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Modal"/>
+                                    <segment title="Push"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presentation " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kR-hd-ezm">
+                                <rect key="frame" x="40" y="372" width="334" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AqH-Om-y0l" firstAttribute="leading" secondItem="mN4-vJ-INA" secondAttribute="leading" id="4fM-6t-LVc"/>
+                            <constraint firstItem="0y9-ao-sfw" firstAttribute="top" secondItem="0dA-94-Yjb" secondAttribute="bottom" constant="30" id="87P-2a-giT"/>
+                            <constraint firstItem="Y8E-Mr-QtW" firstAttribute="trailing" secondItem="mN4-vJ-INA" secondAttribute="trailing" id="8vX-W0-jES"/>
+                            <constraint firstItem="2kR-hd-ezm" firstAttribute="trailing" secondItem="FX3-rN-cOz" secondAttribute="trailing" id="9yN-tC-PH8"/>
+                            <constraint firstItem="0y9-ao-sfw" firstAttribute="leading" secondItem="5gw-QE-IXA" secondAttribute="leadingMargin" constant="20" id="Bav-oa-7l4"/>
+                            <constraint firstItem="2kR-hd-ezm" firstAttribute="leading" secondItem="FX3-rN-cOz" secondAttribute="leading" id="CaJ-tG-vMM"/>
+                            <constraint firstItem="KZS-zh-DbO" firstAttribute="centerX" secondItem="5gw-QE-IXA" secondAttribute="centerX" id="D4H-bl-zbG"/>
+                            <constraint firstItem="KZS-zh-DbO" firstAttribute="top" secondItem="FX3-rN-cOz" secondAttribute="bottom" constant="36" id="EoF-fY-KcL"/>
+                            <constraint firstItem="2kR-hd-ezm" firstAttribute="top" secondItem="ATV-24-yru" secondAttribute="bottom" constant="20" id="GgG-k4-uzL"/>
+                            <constraint firstItem="ATV-24-yru" firstAttribute="trailing" secondItem="mN4-vJ-INA" secondAttribute="trailing" id="HFL-1m-HbF"/>
+                            <constraint firstItem="mN4-vJ-INA" firstAttribute="top" secondItem="0y9-ao-sfw" secondAttribute="bottom" constant="80" id="IKE-cS-yMn"/>
+                            <constraint firstItem="2kR-hd-ezm" firstAttribute="leading" secondItem="ATV-24-yru" secondAttribute="leading" id="KmV-oP-h5m"/>
+                            <constraint firstItem="AqH-Om-y0l" firstAttribute="trailing" secondItem="ATV-24-yru" secondAttribute="trailing" id="P3V-bR-YUt"/>
+                            <constraint firstItem="Y8E-Mr-QtW" firstAttribute="leading" secondItem="mN4-vJ-INA" secondAttribute="leading" id="Q6f-ev-4Jb"/>
+                            <constraint firstItem="AqH-Om-y0l" firstAttribute="top" secondItem="mN4-vJ-INA" secondAttribute="bottom" constant="20" id="XG0-Ad-MRD"/>
+                            <constraint firstItem="AqH-Om-y0l" firstAttribute="leading" secondItem="ATV-24-yru" secondAttribute="leading" id="a1p-Xp-KrL"/>
+                            <constraint firstItem="ATV-24-yru" firstAttribute="top" secondItem="AqH-Om-y0l" secondAttribute="bottom" constant="8" id="aw9-cd-Pwe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mN4-vJ-INA" secondAttribute="trailing" constant="20" id="ge1-3M-ZWJ"/>
+                            <constraint firstItem="mN4-vJ-INA" firstAttribute="leading" secondItem="5gw-QE-IXA" secondAttribute="leadingMargin" constant="20" id="glA-um-vVF"/>
+                            <constraint firstItem="FX3-rN-cOz" firstAttribute="top" secondItem="2kR-hd-ezm" secondAttribute="bottom" constant="8" id="jdB-ok-jsA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0y9-ao-sfw" secondAttribute="trailing" constant="20" id="lY9-Cn-nM4"/>
+                            <constraint firstItem="mN4-vJ-INA" firstAttribute="top" secondItem="Y8E-Mr-QtW" secondAttribute="bottom" constant="8" id="rHY-09-V9s"/>
+                            <constraint firstItem="FX3-rN-cOz" firstAttribute="trailing" secondItem="ATV-24-yru" secondAttribute="trailing" id="xri-dX-IEm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ALCountryPicker" id="Cwy-Um-sPK"/>
+                    <connections>
+                        <outlet property="countryLabel" destination="0y9-ao-sfw" id="tJU-Qp-xcA"/>
+                        <outlet property="languageSegmented" destination="mN4-vJ-INA" id="XAE-5g-gJB"/>
+                        <outlet property="presentationTypeSegmented" destination="FX3-rN-cOz" id="rJ0-wY-JiT"/>
+                        <outlet property="sectionTypeSegmented" destination="ATV-24-yru" id="KvU-Vg-B0G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hi9-hl-XTC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="-161"/>
         </scene>
     </scenes>
 </document>
